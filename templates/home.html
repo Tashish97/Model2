@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+<body>
+ <div class="login">
+	<h1 style="color:#FF0000">CAR SELLING PRICE PREDICTION</h1>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form id ="myForm" action="/" method="POST">
+			<h2>Select Brand</h2><select name="brand"  required="required">
+                <option value="Ambassador">Ambassador</option>
+                <option value="Audi">Audi</option>
+                <option value="BMW">BMW</option>
+				<option value="Chevrolet">Chevrolet</option>
+				<option value="Daewoo">Daewoo</option>
+				<option value="Datsun">Datsun</option>
+				<option value="Fiat">Fiat</option>
+				<option value="Force">Force</option>
+				<option value="Ford">Ford</option>
+				<option value="Honda">Honda</option>
+				<option value="Hyundai">Hyundai</option>
+				<option value="Isuzu">Isuzu</option>
+				<option value="Jaguar">Jaguar</option>
+				<option value="Jeep">Jeep</option>
+				<option value="Kia">Kia</option>
+				<option value="Land">Land Rover</option>
+				<option value="MG">MG</option>
+				<option value="Mahindra">Mahindra</option>
+				<option value="Maruti">Maruti Suzuki</option>
+				<option value="Mercedes-Benz">Mercedes Benz</option>
+				<option value="Mitsubishi">Mitsubishi</option>
+				<option value="Nissan">Nissan</option>
+				<option value="OpelCorsa">OpelCorsa</option>
+				<option value="Renault">Renault</option>
+				<option value="Skoda">Skoda</option>
+				<option value="Tata">Tata</option>
+				<option value="Toyota">Toyota</option>
+				<option value="Volkswagen">Volkswagen</option>
+				<option value="Volvo">Volvo</option>
+            </select>
+            <h3>Build Year</h3>
+            <input name="Year" type="text">
+            <h3>Kilometers Driven</h3>
+			<input type="text" name="Driven" required="required">
+            <h3>Number of Previous owners (1,2,3 or 4 if >=4) ?</h3>
+			<br>
+			<input type="text" name="Owner" required="required">
+            <br><h3>Fuel type?</h3><br><select name="Fuel_Type"  required="required">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option>
+            </select>
+            <br><h3>Who Are you? (Dealer or Individual)</h3><select name="Seller_Type_Individual"  required="required">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>
+            <br><h3>Transmission type</h3><select name="Transmission_Mannual"  required="required">
+                <option value="Mannual">Manual</option>
+                <option value="Automatic">Automatic</option>
+            </select>
+            <br><h2>Calculate the Selling Price</h2>
+			<input type="submit"><br>
+
+	</form>
+	<h1>{{result}}₹</h1>
+   <br>
+ 
+ </div>
+
+</body>
+</html>
